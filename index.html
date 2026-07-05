@@ -82,6 +82,7 @@
   </script>
   
   
+  <link rel="preload" as="image" href="assets/images/Main-Banner-1.webp" type="image/webp">
 </head>
 <body>
 
@@ -119,7 +120,7 @@
       
       <!-- FPT Logo (Local Image) -->
       <a class="navbar-brand d-flex align-items-center text-decoration-none ps-0" href="#" style="margin-left: -5px;">
-        <img src="assets/images/Logo-FPT.png" alt="FPT Logo" class="fpt-logo-img">
+        <img loading="lazy" src="assets/images/Logo-FPT.png" alt="FPT Logo" class="fpt-logo-img">
       </a>
 
       <!-- Navigation Links (Desktop) -->
@@ -185,7 +186,7 @@
                               <div class="form-group mb-3">
                                   <div class="input-wrapper position-relative">
                                       <span class="input-icon-2" style="display:flex;align-items:center;flex-shrink:0;">
-                                          <img src="assets/images/User-Icon.png" alt="User" style="width: 24px; height: 24px; display: block; opacity: 0.5;">
+                                          <img loading="lazy" src="assets/images/User-Icon.png" alt="User" style="width: 24px; height: 24px; display: block; opacity: 0.5;">
                                       </span>
                                       <div class="position-relative w-100">
                                           <input 
@@ -205,7 +206,7 @@
                               <div class="form-group mb-4">
                                   <div class="input-wrapper position-relative">
                                       <span class="input-icon-2" style="display:flex;align-items:center;flex-shrink:0;">
-                                          <img src="assets/images/Phone-Icon.png" alt="Phone" style="width: 24px; height: 24px; display: block; opacity: 0.5;">
+                                          <img loading="lazy" src="assets/images/Phone-Icon.png" alt="Phone" style="width: 24px; height: 24px; display: block; opacity: 0.5;">
                                       </span>
                                       <div class="position-relative w-100">
                                           <input 
@@ -237,14 +238,17 @@
                       <!-- Main Banner with custom responsive clip-path -->
                       <div class="banner-shadow-wrapper">
                         <div class="banner-clip-div">
-                          <img id="main-banner-img" src="assets/images/Main-Banner-1.png" alt="Banner Khuyến Mãi" class="img-fluid w-100" style="display: block;">
+                          <picture>
+                            <source srcset="assets/images/Main-Banner-1.webp" type="image/webp">
+                            <img id="main-banner-img" src="assets/images/Main-Banner-1.png" alt="Banner Khuyến Mãi" class="img-fluid w-100" style="display: block;" width="1080" height="420" loading="eager">
+                          </picture>
                         </div>
                       </div>
                       
                       <!-- Sign Up Button Component (Overlapping top-right of the banner) -->
                       <div class="signup-button-group" style="position: absolute; top: 15px; right: 15px; z-index: 1070;">
                           <button class="signup-button" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký ngay</button>
-                          <img 
+                          <img loading="lazy" 
                             src="assets/images/Call-Icon.png" 
                             alt="Sign Up Action" 
                             class="button-icon"
@@ -256,17 +260,17 @@
 
                       <!-- Thumbnails Container (Second Code Block) -->
                       <div class="thumbnails-container">
-                        <div class="thumbnail-item active d-none d-md-block" data-banner="assets/images/Main-Banner-1.png">
-                          <img src="assets/images/Main-Banner-1.png" alt="Banner Ngoại Hạng">
+                        <div class="thumbnail-item active d-none d-md-block" data-banner="assets/images/Main-Banner-1.webp">
+                          <img src="assets/images/Main-Banner-1.webp" alt="Banner Ngoại Hạng" loading="lazy">
                         </div>
-                        <div class="thumbnail-item" data-banner="assets/images/Main-Banner-2.png">
-                          <img src="assets/images/Main-Banner-2.png" alt="Banner Camera">
+                        <div class="thumbnail-item" data-banner="assets/images/Main-Banner-2.webp">
+                          <img src="assets/images/Main-Banner-2.webp" alt="Banner Camera" loading="lazy">
                         </div>
-                        <div class="thumbnail-item" data-banner="assets/images/Main-Banner-3.png">
-                          <img src="assets/images/Main-Banner-3.png" alt="Banner Khuyến Mãi">
+                        <div class="thumbnail-item" data-banner="assets/images/Main-Banner-3.webp">
+                          <img src="assets/images/Main-Banner-3.webp" alt="Banner Khuyến Mãi" loading="lazy">
                         </div>
-                        <div class="thumbnail-item d-none d-md-block" data-banner="assets/images/Main-Banner-2.png">
-                          <img src="assets/images/Main-Banner-2.png" alt="Banner Camera 2">
+                        <div class="thumbnail-item d-none d-md-block" data-banner="assets/images/Main-Banner-2.webp">
+                          <img src="assets/images/Main-Banner-2.webp" alt="Banner Camera 2" loading="lazy">
                         </div>
                       </div>
 
@@ -281,20 +285,20 @@
   <div class="marquee-container">
       <div class="marquee-wrapper">
           <div class="marquee-content">
-              <img src="assets/images/Router.png" alt="Router" class="marquee-icon">
+              <img loading="lazy" src="assets/images/Router.png" alt="Router" class="marquee-icon">
               <span class="marquee-text-item">Ưu đãi: Tặng ngay 1 tháng khi đăng ký trả trước 12 tháng gói Internet FPT/ Tặng ngay 01 Modem wifi 6 khi đăng ký lắp mới internet FPT/ Ưu đãi Ngoại Hạng Anh đăng ký 6 tháng tặng 2 tháng sử dụng/</span>
           </div>
           <!-- Duplicate content for seamless infinite scrolling -->
           <div class="marquee-content">
-              <img src="assets/images/Router.png" alt="Router" class="marquee-icon">
+              <img loading="lazy" src="assets/images/Router.png" alt="Router" class="marquee-icon">
               <span class="marquee-text-item">Ưu đãi: Tặng ngay 1 tháng khi đăng ký trả trước 12 tháng gói Internet FPT/ Tặng ngay 01 Modem wifi 6 khi đăng ký lắp mới internet FPT/ Ưu đãi Ngoại Hạng Anh đăng ký 6 tháng tặng 2 tháng sử dụng/</span>
           </div>
           <div class="marquee-content">
-              <img src="assets/images/Router.png" alt="Router" class="marquee-icon">
+              <img loading="lazy" src="assets/images/Router.png" alt="Router" class="marquee-icon">
               <span class="marquee-text-item">Ưu đãi: Tặng ngay 1 tháng khi đăng ký trả trước 12 tháng gói Internet FPT/ Tặng ngay 01 Modem wifi 6 khi đăng ký lắp mới internet FPT/ Ưu đãi Ngoại Hạng Anh đăng ký 6 tháng tặng 2 tháng sử dụng/</span>
           </div>
           <div class="marquee-content">
-              <img src="assets/images/Router.png" alt="Router" class="marquee-icon">
+              <img loading="lazy" src="assets/images/Router.png" alt="Router" class="marquee-icon">
               <span class="marquee-text-item">Ưu đãi: Tặng ngay 1 tháng khi đăng ký trả trước 12 tháng gói Internet FPT/ Tặng ngay 01 Modem wifi 6 khi đăng ký lắp mới internet FPT/ Ưu đãi Ngoại Hạng Anh đăng ký 6 tháng tặng 2 tháng sử dụng/</span>
           </div>
       </div>
@@ -306,7 +310,10 @@
           <div class="row justify-content-center">
               <div class="col-12">
                   <div class="exclusive-gift-wrapper desktop-wrapper position-relative overflow-hidden rounded-4 shadow-lg mx-auto" style="max-width: 100%; border-radius: 24px;">
-                      <img src="assets/images/fpt-play-ngoai-hang-anh-desktop.png" alt="Ưu đãi độc quyền" class="img-fluid w-100 exclusive-gift-image" style="display: block; width: 100%; height: auto; border-radius: 24px;">
+                      <picture>
+                            <source srcset="assets/images/fpt-play-ngoai-hang-anh-desktop.webp" type="image/webp">
+                            <img src="assets/images/fpt-play-ngoai-hang-anh-desktop.png" alt="Ưu đãi độc quyền" class="img-fluid w-100 exclusive-gift-image" style="display: block; width: 100%; height: auto; border-radius: 24px;" width="1920" height="500" loading="lazy">
+                          </picture>
                       <div class="exclusive-gift-overlay"></div>
                       <button class="btn btn-register position-absolute start-50 translate-middle-x rounded-pill text-white fw-bold" style="bottom: 5% !important; padding: 12px 48px; border-radius: 100px !important;" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký ngay</button>
                   </div>
@@ -321,7 +328,10 @@
           <div class="row justify-content-center">
               <div class="col-12 col-lg-10">
                   <div class="exclusive-gift-wrapper mobile-wrapper position-relative overflow-hidden rounded-4 shadow-lg mx-auto" style="max-width: 450px; border-radius: 24px;">
-                      <img src="assets/images/fpt-play-ngoai-hang-anh-mobile.png" alt="Ưu đãi độc quyền" class="img-fluid w-100 exclusive-gift-image" style="display: block; width: 100%; height: auto; border-radius: 24px;">
+                      <picture>
+                            <source srcset="assets/images/fpt-play-ngoai-hang-anh-mobile.webp" type="image/webp">
+                            <img src="assets/images/fpt-play-ngoai-hang-anh-mobile.png" alt="Ưu đãi độc quyền" class="img-fluid w-100 exclusive-gift-image" style="display: block; width: 100%; height: auto; border-radius: 24px;" width="450" height="800" loading="lazy">
+                          </picture>
                       <div class="exclusive-gift-overlay"></div>
                       <button class="btn btn-register position-absolute start-50 translate-middle-x rounded-pill text-white fw-bold" style="bottom: 5% !important; padding: 12px 48px; border-radius: 100px !important;" data-bs-toggle="modal" data-bs-target="#registerModal">Đăng ký ngay</button>
                   </div>
@@ -365,7 +375,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Giga-Mobile-1.png">
-                              <img src="assets/images/Giga-Desktop.png" alt="Gói cước Giga FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Giga-Desktop.png" alt="Gói cước Giga FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -385,7 +395,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Sky-Mobile-1.png">
-                              <img src="assets/images/Sky-Desktop.png" alt="Gói cước Sky FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Sky-Desktop.png" alt="Gói cước Sky FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -405,7 +415,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Meta-Mobile-1.png">
-                              <img src="assets/images/Meta-Desktop.png" alt="Gói cước Meta FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Meta-Desktop.png" alt="Gói cước Meta FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -431,7 +441,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Combo-Giga-Mobile-1.png">
-                              <img src="assets/images/Combo-Giga-Desktop.png" alt="Gói cước Combo Giga FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Combo-Giga-Desktop.png" alt="Gói cước Combo Giga FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -451,7 +461,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Combo-VVIP-Mobile-1.png">
-                              <img src="assets/images/Combo-VVIP-Desktop.png" alt="Gói cước Combo VVIP FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Combo-VVIP-Desktop.png" alt="Gói cước Combo VVIP FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -471,7 +481,7 @@
                       <div class="card border-0 shadow-sm rounded-4 overflow-hidden h-100 p-3 bg-white pricing-card-custom">
                           <picture>
                               <source media="(max-width: 767.98px)" srcset="assets/images/Combo-Sky-Mobile-1.png">
-                              <img src="assets/images/Combo-Sky-Desktop.png" alt="Gói cước Combo Sky FPT" class="img-fluid w-100" style="object-fit: cover;">
+                              <img loading="lazy" src="assets/images/Combo-Sky-Desktop.png" alt="Gói cước Combo Sky FPT" class="img-fluid w-100" style="object-fit: cover;">
                           </picture>
                           <div class="xem-them-btn d-flex d-md-none align-items-center justify-content-center gap-2 mt-3 mb-2" style="cursor: pointer; color: #666; font-size: 1.15rem; font-weight: 500;">
                               <span>Xem thêm</span>
@@ -507,13 +517,13 @@
               <div class="banner-buttons d-flex align-items-center gap-3">
                   <a href="tel:0324102101" class="btn btn-phone d-inline-flex align-items-center justify-content-center text-decoration-none">
                       <span class="phone-icon me-2 d-flex align-items-center justify-content-center">
-                          <img src="assets/images/Phone.png" alt="Phone" style="width: 22px; height: 22px; object-fit: contain;">
+                          <img loading="lazy" src="assets/images/Phone.png" alt="Phone" style="width: 22px; height: 22px; object-fit: contain;">
                       </span>
                       <span class="btn-text">0324.102.101</span>
                   </a>
                   <a href="https://zalo.me/0324102101" target="_blank" class="btn btn-zalo d-inline-flex align-items-center justify-content-center text-decoration-none" style="border: none !important;">
                       <span class="zalo-icon me-2 d-flex align-items-center justify-content-center">
-                          <img src="assets/images/Logo-Zalo.png" alt="Zalo" style="width: 22px; height: 22px; object-fit: contain;">
+                          <img loading="lazy" src="assets/images/Logo-Zalo.png" alt="Zalo" style="width: 22px; height: 22px; object-fit: contain;">
                       </span>
                     <span class="btn-text">Liên hệ Zalo</span>
                   </a>
@@ -728,6 +738,12 @@
 
       // CMS helper to format image URLs
       const getImageUrl = (url) => {
+        if (url && url.endsWith('.png')) {
+          return url.replace('.png', '.webp');
+        }
+        if (url && url.includes('-Desktop.png')) {
+          return url.replace('-Desktop.png', '-Desktop.webp');
+        }
         if (!url) return '';
         if (url.startsWith('http://') || url.startsWith('https://')) return url;
         if (url.startsWith('/uploads/')) return `${CMS_URL}${url}`;
@@ -758,7 +774,7 @@
               const responsiveClass = (index === 0 || index === 3) ? 'd-none d-md-block' : '';
               return `
                 <div class="thumbnail-item ${activeClass} ${responsiveClass}" data-banner="${imgUrl}">
-                  <img src="${imgUrl}" alt="${banner.title}">
+                  <img loading="lazy" src="${imgUrl}" alt="${banner.title}">
                 </div>
               `;
             }).join('');
@@ -857,7 +873,7 @@
               pictureHtml = `
                 <picture>
                     <source media="(max-width: 767.98px)" srcset="${mobileImg1}">
-                    <img src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100" style="object-fit: cover;">
+                    <img loading="lazy" src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100" style="object-fit: cover;">
                 </picture>
               `;
               toggleButtonHtml = `
@@ -873,7 +889,7 @@
               pictureHtml = `
                 <picture>
                     <source media="(max-width: 767.98px)" srcset="${mobileImgUrl}">
-                    <img src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100" style="object-fit: cover;">
+                    <img loading="lazy" src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100" style="object-fit: cover;">
                 </picture>
               `;
               toggleButtonHtml = `
@@ -886,7 +902,7 @@
               `;
             } else {
               pictureHtml = `
-                <img src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100 rounded-3" style="object-fit: cover; max-height: 480px;">
+                <img loading="lazy" src="${imgUrl}" alt="${pkg.name}" class="img-fluid w-100 rounded-3" style="object-fit: cover; max-height: 480px;">
               `;
             }
             
@@ -1023,7 +1039,7 @@
                 buttonsHTML += `
                   <a ${btn1Attr} class="btn btn-phone d-inline-flex align-items-center justify-content-center text-decoration-none" style="cursor:pointer;">
                       <span class="phone-icon me-2 d-flex align-items-center justify-content-center">
-                          <img src="assets/images/Phone.png" alt="Đăng ký" style="width: 22px; height: 22px; object-fit: contain;">
+                          <img loading="lazy" src="assets/images/Phone.png" alt="Đăng ký" style="width: 22px; height: 22px; object-fit: contain;">
                       </span>
                       <span class="btn-text">${promo.buttonText}</span>
                   </a>`;
@@ -1039,7 +1055,7 @@
                 buttonsHTML += `
                   <a ${btn2Attr} class="btn btn-zalo d-inline-flex align-items-center justify-content-center text-decoration-none" style="border: none !important; cursor:pointer;">
                       <span class="zalo-icon me-2 d-flex align-items-center justify-content-center">
-                          <img src="assets/images/Logo-Zalo.png" alt="Zalo" style="width: 22px; height: 22px; object-fit: contain;">
+                          <img loading="lazy" src="assets/images/Logo-Zalo.png" alt="Zalo" style="width: 22px; height: 22px; object-fit: contain;">
                       </span>
                       <span class="btn-text">${promo.button2Text}</span>
                   </a>`;
@@ -1176,7 +1192,7 @@
                     </div>
                     ` : `
                     <div class="mt-4">
-                        <img src="${specUrl}" alt="Thông Số Kỹ Thuật Nổi Bật" class="img-fluid" style="max-width: 100%; height: auto;">
+                        <img loading="lazy" src="${specUrl}" alt="Thông Số Kỹ Thuật Nổi Bật" class="img-fluid" style="max-width: 100%; height: auto;">
                     </div>
                     `}
                     <div class="d-flex gap-3 mt-4 flex-wrap justify-content-start align-items-center">
@@ -1193,7 +1209,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
-                    <img src="${bgUrl}" alt="${sec.title}" class="img-fluid wifi-device-img" style="max-width: 100%; height: auto; max-height: 650px; object-fit: contain; transform: translateY(40px);">
+                    <img loading="lazy" src="${bgUrl}" alt="${sec.title}" class="img-fluid wifi-device-img" style="max-width: 100%; height: auto; max-height: 650px; object-fit: contain; transform: translateY(40px);">
                 </div>
             </div>
         </div>
@@ -1239,7 +1255,7 @@
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-12 col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-                    <img src="${devImg}" alt="${sec.title}" class="img-fluid fpt-play-box-img" style="width: 100%; max-width: 130%; height: auto; object-fit: contain; transform: translate(-120px, 35px) scale(1.25); transform-origin: center left;">
+                    <img loading="lazy" src="${devImg}" alt="${sec.title}" class="img-fluid fpt-play-box-img" style="width: 100%; max-width: 130%; height: auto; object-fit: contain; transform: translate(-120px, 35px) scale(1.25); transform-origin: center left;">
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="hero-content">
@@ -1248,12 +1264,12 @@
                         <p class="hero-description">${sec.description.replace(/\n/g, '<br>')}</p>
                         <div class="mt-4 d-flex flex-column gap-2 gap-md-3">
                             <div class="d-flex gap-2 gap-md-3 align-items-center">
-                            <img src="${f1}" alt="Feature 1" class="img-fluid feature-card-img" style="max-width: 280px;">
-                            <img src="${f2}" alt="Feature 2" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="${f1}" alt="Feature 1" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="${f2}" alt="Feature 2" class="img-fluid feature-card-img" style="max-width: 280px;">
                             </div>
                             <div class="d-flex gap-2 gap-md-3 align-items-center">
-                            <img src="${f3}" alt="Feature 3" class="img-fluid feature-card-img" style="max-width: 280px;">
-                            <img src="${f4}" alt="Feature 4" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="${f3}" alt="Feature 3" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="${f4}" alt="Feature 4" class="img-fluid feature-card-img" style="max-width: 280px;">
                             </div>
                         </div>
                         <div class="d-flex gap-3 mt-4 flex-wrap justify-content-start align-items-center">
@@ -1353,7 +1369,7 @@
               return `
                 <div class="col-12 col-md-4 trust-card-col">
                     <div class="trust-card">
-                        <img src="${imgUrl}" alt="${card.title}" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
+                        <img loading="lazy" src="${imgUrl}" alt="${card.title}" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
                         <div class="trust-card-body">
                             <p class="trust-card-date">${card.dateText}</p>
                             <h5 class="trust-card-title">${card.title}</h5>
@@ -1653,7 +1669,7 @@
           <!-- Success Screen Container (Ẩn mặc định) -->
           <div id="modal-success-screen" class="d-none py-1">
             <div class="text-center mb-2">
-  <img src="assets/images/Gift-Box.png" alt="Hộp quà Ưu đãi" class="img-fluid" style="max-height: 100px; filter: drop-shadow(0 4px 15px rgba(255,126,0,0.3));">
+  <img loading="lazy" src="assets/images/Gift-Box.png" alt="Hộp quà Ưu đãi" class="img-fluid" style="max-height: 100px; filter: drop-shadow(0 4px 15px rgba(255,126,0,0.3));">
             </div>
   <h2 class="fw-bold mb-2 modal-success-title" style="font-size: 1.8rem; letter-spacing: 0.5px;">ĐĂNG KÝ THÀNH CÔNG</h2>
   <p class="fs-6 opacity-90 mb-1">Tặng thiết bị WiFi 6 cho 300 KH đầu tiên</p>
@@ -1684,7 +1700,7 @@
                         Công nghệ Multi-Link Operation cho phép kết hợp<br class="d-inline d-lg-none"> linh hoạt nhiều băng tần (2.4GHz,<br class="d-none d-lg-inline"> 5GHz, 6GHz), tối ưu<br class="d-inline d-lg-none"> tốc độ và độ ổn định, giảm thiểu gián đoạn ngay khi<br class="d-inline d-lg-none"> mạng bận rộn.
                     </p>
                     <div class="mt-4">
-                        <img src="assets/images/Thông-Số-Kỹ-Thuật-Nổi-Bật.png" alt="Thông Số Kỹ Thuật Nổi Bật" class="img-fluid" style="max-width: 100%; height: auto;">
+                        <img loading="lazy" src="assets/images/Thông-Số-Kỹ-Thuật-Nổi-Bật.png" alt="Thông Số Kỹ Thuật Nổi Bật" class="img-fluid" style="max-width: 100%; height: auto;">
                     </div>
                     <div class="d-flex gap-3 mt-4 flex-wrap justify-content-start align-items-center">
                         <a href="#name-input" class="btn btn-orange rounded-pill text-white px-4 py-3 fw-bold" style="font-size: 0.95rem; width: 230px; display: inline-block;">
@@ -1696,7 +1712,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 text-center text-lg-end mt-4 mt-lg-0">
-                    <img src="assets/images/Wifi-7.png" alt="Thiết bị Wifi 7 FPT" class="img-fluid wifi-device-img" style="max-width: 100%; height: auto; max-height: 650px; object-fit: contain; transform: translateY(40px);">
+                    <img loading="lazy" src="assets/images/Wifi-7.png" alt="Thiết bị Wifi 7 FPT" class="img-fluid wifi-device-img" style="max-width: 100%; height: auto; max-height: 650px; object-fit: contain; transform: translateY(40px);">
                 </div>
             </div>
         </div>
@@ -1709,7 +1725,7 @@
         <div class="container">
             <div class="row align-items-center flex-column-reverse flex-lg-row">
                 <div class="col-12 col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
-                    <img src="assets/images/Bộ-Giải-Mã-FPT-Play-Box.png" alt="Bộ Giải Mã FPT Play Box" class="img-fluid fpt-play-box-img" style="width: 100%; max-width: 130%; height: auto; object-fit: contain; transform: translate(-120px, 35px) scale(1.25); transform-origin: center left;">
+                    <img loading="lazy" src="assets/images/Bộ-Giải-Mã-FPT-Play-Box.png" alt="Bộ Giải Mã FPT Play Box" class="img-fluid fpt-play-box-img" style="width: 100%; max-width: 130%; height: auto; object-fit: contain; transform: translate(-120px, 35px) scale(1.25); transform-origin: center left;">
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="hero-content">
@@ -1718,12 +1734,12 @@
                         <p class="hero-description">Xem trọn 360 trận đấu mỗi mùa giải, chất lượng 4K<br class="d-block d-lg-none">siêu mượt. Đón xem những siêu phẩm đến từ Erling<br class="d-block d-lg-none">Haaland và Mohamed Salah.</p>
                         <div class="mt-4 d-flex flex-column gap-2 gap-md-3">
                             <div class="d-flex gap-2 gap-md-3 align-items-center">
-                            <img src="assets/images/Thẻ-Tính-Năng-1.png" alt="120+ Kênh TV" class="img-fluid feature-card-img" style="max-width: 280px;">
-                            <img src="assets/images/Thẻ-Tính-Năng-2.png" alt="Kho Phim 4K" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="assets/images/Thẻ-Tính-Năng-1.png" alt="120+ Kênh TV" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="assets/images/Thẻ-Tính-Năng-2.png" alt="Kho Phim 4K" class="img-fluid feature-card-img" style="max-width: 280px;">
                             </div>
                             <div class="d-flex gap-2 gap-md-3 align-items-center">
-                            <img src="assets/images/Thẻ-Tính-Năng-3.png" alt="Voice Remote" class="img-fluid feature-card-img" style="max-width: 280px;">
-                            <img src="assets/images/Thẻ-Tính-Năng-4.png" alt="Nội dung an toàn" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="assets/images/Thẻ-Tính-Năng-3.png" alt="Voice Remote" class="img-fluid feature-card-img" style="max-width: 280px;">
+                            <img loading="lazy" src="assets/images/Thẻ-Tính-Năng-4.png" alt="Nội dung an toàn" class="img-fluid feature-card-img" style="max-width: 280px;">
                             </div>
                         </div>
                         <div class="d-flex gap-3 mt-4 flex-wrap justify-content-start align-items-center">
@@ -1770,7 +1786,7 @@
               <!-- Card 1 -->
               <div class="col-12 col-md-4 trust-card-col">
                   <div class="trust-card">
-                      <img src="assets/images/FPT-Telecom-Nhận-Giải-Thưởng%20-Uy-Tín-%27Chất-Lượng-Dịch-Vụ-Được-Khách-Hàng-Hài-Lòng-Nhất%27.png" alt="Giải thưởng FPT Telecom" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
+                      <img loading="lazy" src="assets/images/FPT-Telecom-Nhận-Giải-Thưởng%20-Uy-Tín-%27Chất-Lượng-Dịch-Vụ-Được-Khách-Hàng-Hài-Lòng-Nhất%27.png" alt="Giải thưởng FPT Telecom" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
                       <div class="trust-card-body">
                           <p class="trust-card-date">04/2025</p>
                           <h5 class="trust-card-title">FPT Telecom nhận giải thưởng uy tín 'Chất lượng dịch vụ được khách hàng hài lòng nhất'</h5>
@@ -1780,7 +1796,7 @@
               <!-- Card 2 -->
               <div class="col-12 col-md-4 trust-card-col">
                   <div class="trust-card">
-                      <img src="assets/images/FPT-Nhận-Giải-Vàng-Stevie-Awards-Hạng-Mục.png" alt="Giải thưởng Stevie Awards" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
+                      <img loading="lazy" src="assets/images/FPT-Nhận-Giải-Vàng-Stevie-Awards-Hạng-Mục.png" alt="Giải thưởng Stevie Awards" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
                       <div class="trust-card-body">
                           <p class="trust-card-date">05/2025</p>
                           <h5 class="trust-card-title">FPT nhận giải Vàng Stevie Awards hạng mục "Nhà tuyển dụng của năm" 2025</h5>
@@ -1790,7 +1806,7 @@
               <!-- Card 3 -->
               <div class="col-12 col-md-4 trust-card-col">
                   <div class="trust-card">
-                      <img src="assets/images/Viễn-Thông-FPT-Nhận-Cú-Đúp-Tại-Giải-Thưởng-Vạn-Xuân-Awards-2025.png" alt="Giải thưởng Vạn Xuân Awards" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
+                      <img loading="lazy" src="assets/images/Viễn-Thông-FPT-Nhận-Cú-Đúp-Tại-Giải-Thưởng-Vạn-Xuân-Awards-2025.png" alt="Giải thưởng Vạn Xuân Awards" class="img-fluid w-100" style="object-fit: cover; aspect-ratio: 16/10; display: block;">
                       <div class="trust-card-body">
                           <p class="trust-card-date">01/2026</p>
                           <h5 class="trust-card-title">Viễn thông FPT nhận cúp tại giải thưởng Vạn Xuân Awards 2025</h5>
@@ -2004,7 +2020,7 @@
               <!-- Left: Brand Logo -->
               <div class="col-12 col-md-4 text-start">
                   <a href="#" class="d-inline-flex align-items-center text-decoration-none">
-                      <img id="footer-logo-img" src="assets/images/Logo-FPT-Telecom.png" alt="FPT Telecom Logo" style="height: 38px; width: auto; object-fit: contain;">
+                      <img loading="lazy" id="footer-logo-img" src="assets/images/Logo-FPT-Telecom.png" alt="FPT Telecom Logo" style="height: 38px; width: auto; object-fit: contain;">
                   </a>
               </div>
               
@@ -2012,32 +2028,32 @@
               <div class="col-12 col-md-8 d-none d-md-flex justify-content-start justify-content-md-end align-items-center gap-4 flex-wrap">
                   <!-- Hi FPT link -->
                   <a href="#" id="footer-social-hi" title="Hi FPT" class="text-decoration-none" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Logo-Hi.png" alt="Hi FPT Logo" style="height: 36px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-Hi.png" alt="Hi FPT Logo" style="height: 36px; width: auto; object-fit: contain;">
                   </a>
                   
                   <!-- Youtube link -->
                   <a href="#" id="footer-social-youtube" class="text-decoration-none" title="YouTube" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Logo-YouTube.png" alt="YouTube Logo" style="height: 36px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-YouTube.png" alt="YouTube Logo" style="height: 36px; width: auto; object-fit: contain;">
                   </a>
                   
                   <!-- Instagram link -->
                   <a href="#" id="footer-social-instagram" class="text-decoration-none" title="Instagram" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Logo-Instagram.png" alt="Instagram Logo" style="height: 24px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-Instagram.png" alt="Instagram Logo" style="height: 24px; width: auto; object-fit: contain;">
                   </a>
                   
                   <!-- Zalo link -->
                   <a href="https://zalo.me/0324102101" id="footer-social-zalo" target="_blank" class="text-decoration-none" title="Zalo" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Zalo-Icon.png" alt="Zalo Logo" style="height: 18px; width: auto; object-fit: contain; vertical-align: middle;">
+                      <img loading="lazy" src="assets/images/Zalo-Icon.png" alt="Zalo Logo" style="height: 18px; width: auto; object-fit: contain; vertical-align: middle;">
                   </a>
                   
                   <!-- Facebook link -->
                   <a href="#" id="footer-social-facebook" class="text-decoration-none" title="Facebook" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Facebook-Icon.png" alt="Facebook Logo" style="height: 24px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Facebook-Icon.png" alt="Facebook Logo" style="height: 24px; width: auto; object-fit: contain;">
                   </a>
                   
                   <!-- Hotline -->
                   <a href="tel:19006600" id="footer-hotline-link" class="hotline-link ms-2" style="line-height: 1; display: inline-flex; align-items: center;">
-                      <img src="assets/images/Call-Number.png" alt="Hotline 1900 6600" style="height: 24px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Call-Number.png" alt="Hotline 1900 6600" style="height: 24px; width: auto; object-fit: contain;">
                   </a>
               </div>
           </div>
@@ -2052,15 +2068,15 @@
           <h6 class="fw-bold mb-3 text-dark text-uppercase" style="font-size: 0.95rem;" id="footer-company-name">Công ty Cổ phần Viễn thông FPT</h6>
                   
                   <div class="d-flex align-items-start gap-2 mb-2">
-                      <img src="assets/images/Location-Icon.png" alt="Location" style="width: 16px; height: 16px; object-fit: contain; margin-top: 4px; flex-shrink: 0;">
+                      <img loading="lazy" src="assets/images/Location-Icon.png" alt="Location" style="width: 16px; height: 16px; object-fit: contain; margin-top: 4px; flex-shrink: 0;">
           <span class="text-secondary" id="footer-address">Tầng 9, Block A, tòa nhà FPT Cầu Giấy, số 10 Phạm Văn Bạch, quận Cầu Giấy, TP. Hà Nội</span>
                   </div>
                   <div class="d-flex align-items-center gap-2 mb-2">
-                      <img src="assets/images/Mail-Icon.png" alt="Email" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+                      <img loading="lazy" src="assets/images/Mail-Icon.png" alt="Email" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
                       <a href="mailto:hotrokhachhang@fpt.com" class="text-secondary" id="footer-email">hotrokhachhang@fpt.com</a>
                   </div>
                   <div class="d-flex align-items-center gap-2 mb-4">
-                      <img src="assets/images/Phone-Icon.png" alt="Phone" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
+                      <img loading="lazy" src="assets/images/Phone-Icon.png" alt="Phone" style="width: 16px; height: 16px; object-fit: contain; flex-shrink: 0;">
                       <a href="tel:02473002222" class="text-secondary" id="footer-phone">024 7300 2222</a>
                   </div>
                   
@@ -2068,7 +2084,7 @@
                   
                   <!-- Ministry of Industry and Trade Badge -->
                   <a href="#" target="_blank" id="footer-badge-link">
-          <img src="assets/images/Chứng-Nhận.png" id="footer-badge-img" alt="Đã thông báo Bộ Công Thương" class="bocongthuong-logo-img d-none d-md-block" style="height: 40px; width: auto; object-fit: contain; display: block; margin-top: 15px;">
+          <img loading="lazy" src="assets/images/Chứng-Nhận.png" id="footer-badge-img" alt="Đã thông báo Bộ Công Thương" class="bocongthuong-logo-img d-none d-md-block" style="height: 40px; width: auto; object-fit: contain; display: block; margin-top: 15px;">
                   </a>
               </div>
 
@@ -2174,19 +2190,19 @@
               <!-- Social Links -->
               <div class="d-flex align-items-center gap-4 flex-wrap w-100">
                   <a href="#" title="Hi FPT" class="text-decoration-none">
-                      <img src="assets/images/Logo-Hi.png" alt="Hi FPT Logo" style="height: 38px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-Hi.png" alt="Hi FPT Logo" style="height: 38px; width: auto; object-fit: contain;">
                   </a>
                   <a href="#" class="text-decoration-none" title="YouTube">
-                      <img src="assets/images/Logo-YouTube.png" alt="YouTube Logo" style="height: 38px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-YouTube.png" alt="YouTube Logo" style="height: 38px; width: auto; object-fit: contain;">
                   </a>
                   <a href="#" class="text-decoration-none" title="Instagram">
-                      <img src="assets/images/Logo-Instagram.png" alt="Instagram Logo" style="height: 26px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Logo-Instagram.png" alt="Instagram Logo" style="height: 26px; width: auto; object-fit: contain;">
                   </a>
                   <a href="https://zalo.me/0324102101" target="_blank" class="text-decoration-none" title="Zalo">
-                      <img src="assets/images/Zalo-Icon.png" alt="Zalo Logo" style="height: 20px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Zalo-Icon.png" alt="Zalo Logo" style="height: 20px; width: auto; object-fit: contain;">
                   </a>
                   <a href="#" class="text-decoration-none" title="Facebook">
-                      <img src="assets/images/Facebook-Icon.png" alt="Facebook Logo" style="height: 26px; width: auto; object-fit: contain;">
+                      <img loading="lazy" src="assets/images/Facebook-Icon.png" alt="Facebook Logo" style="height: 26px; width: auto; object-fit: contain;">
                   </a>
               </div>
               
@@ -2198,7 +2214,7 @@
 
               <!-- Ministry of Industry and Trade Badge -->
               <a href="#" target="_blank" class="mt-2">
-                  <img src="assets/images/Chứng-Nhận.png" alt="Đã thông báo Bộ Công Thương" style="height: 42px; width: auto; object-fit: contain; display: block;">
+                  <img loading="lazy" src="assets/images/Chứng-Nhận.png" alt="Đã thông báo Bộ Công Thương" style="height: 42px; width: auto; object-fit: contain; display: block;">
               </a>
           </div>
       </div>
