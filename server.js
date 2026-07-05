@@ -1,8 +1,53 @@
+require('dotenv').config();
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
 const PORT = 3001;
+const CMS_URL = process.env.VITE_CMS_URL || 'http://localhost:3000';
+const API_KEY = process.env.VITE_API_KEY || '';
+
+console.log(`[CMS] Proxying to CMS URL: ${CMS_URL}`);
+
+// Helper to handle proxy requests with timeout & mock fallback
+async function proxyToCMS(cmsPath, fallbackData, res, reqOptions = {}) {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+    
+    const headers = {
+      'Content-Type': 'application/json',
+      ...reqOptions.headers
+    };
+    
+    if (API_KEY) {
+      headers['Authorization'] = `Bearer ${API_KEY}`;
+    }
+
+    const response = await fetch(`${CMS_URL}${cmsPath}`, {
+      method: reqOptions.method || 'GET',
+      headers: headers,
+      body: reqOptions.body ? JSON.stringify(reqOptions.body) : undefined,
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    
+    if (!response.ok) {
+      throw new Error(`CMS returned status code: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    console.log(`[CMS] Successfully fetched ${cmsPath} from CMS`);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(data));
+  } catch (err) {
+    console.warn(`[CMS] Error fetching ${cmsPath} (${err.message}). Using mock fallback.`);
+    res.writeHead(200, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify(fallbackData));
+  }
+}
+
 
 const MIME_TYPES = {
   '.html': 'text/html; charset=utf-8',
@@ -37,31 +82,30 @@ const server = http.createServer((req, res) => {
 
   // API Endpoints
   if (url === '/api/fpt/banners' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       { id: 1, title: 'Main Banner 1', imageUrl: 'assets/images/Main-Banner-1.png', status: true },
       { id: 2, title: 'Main Banner 2', imageUrl: 'assets/images/Main-Banner-2.png', status: true },
       { id: 3, title: 'Main Banner 3', imageUrl: 'assets/images/Main-Banner-3.png', status: true }
-    ]));
+    ];
+    proxyToCMS('/api/banners', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/packages' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       { id: 'giga', name: 'Giga', imageUrl: 'assets/images/Giga-Desktop.png', status: true },
       { id: 'sky', name: 'Sky', imageUrl: 'assets/images/Sky-Desktop.png', status: true },
       { id: 'meta', name: 'Meta', imageUrl: 'assets/images/Meta-Desktop.png', status: true },
       { id: 'combo-giga', name: 'Combo Giga', imageUrl: 'assets/images/Combo-Giga-Desktop.png', status: true },
       { id: 'combo-sky', name: 'Combo Sky', imageUrl: 'assets/images/Combo-Sky-Desktop.png', status: true },
       { id: 'combo-vvip', name: 'Combo VVIP', imageUrl: 'assets/images/Combo-VVIP-Desktop.png', status: true }
-    ]));
+    ];
+    proxyToCMS('/api/packages', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/promotions' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       {
         id: 1,
         title: "<span style='color: #FF7E00;'>SIÊU ƯU ĐÃI</span> THÁNG NÀY",
@@ -70,26 +114,26 @@ const server = http.createServer((req, res) => {
         buttonUrl: "https://zalo.me/0324102101",
         status: true
       }
-    ]));
+    ];
+    proxyToCMS('/api/promotions', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/menus' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       { id: 1, title: 'Trang chủ', url: '#', status: true },
       { id: 2, title: 'Bảng giá', url: '#pricing-section', status: true },
       { id: 3, title: 'Wi-Fi 7', url: '#wifi-section', status: true },
       { id: 4, title: 'FPT Play Box', url: '#fpt-play-box', status: true },
       { id: 5, title: 'Tin tức', url: '#trust-section', status: true },
       { id: 6, title: 'FAQ', url: '#faq-section', status: true }
-    ]));
+    ];
+    proxyToCMS('/api/menus', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/footer/settings' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({
+    const fallback = {
       id: 'fpt-footer-settings-id',
       certNo1: 'Giấy chứng nhận ĐKDN số 0101778163 do Sở Kế hoạch và Đầu tư Thành phố Hà Nội cấp ngày 28/07/1999',
       certNo2: 'Giấy phép cung cấp dịch vụ viễn thông số 255/GP-CVT do Cục Viễn Thông cấp ngày 07/11/2022',
@@ -106,13 +150,13 @@ const server = http.createServer((req, res) => {
       logoUrl: 'assets/images/Logo-FPT-Telecom.png',
       badgeUrl: 'assets/images/Chứng-Nhận.png',
       badgeLink: '#',
-    }));
+    };
+    proxyToCMS('/api/footer/settings', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/footer/links' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       { title: 'Giới thiệu chung', url: '#', category: 'Về FPT Telecom', order: 1, status: true },
       { title: 'Liên kết - Thành viên', url: '#', category: 'Về FPT Telecom', order: 2, status: true },
       { title: 'Khách hàng - Đối tác', url: '#', category: 'Về FPT Telecom', order: 3, status: true },
@@ -131,13 +175,13 @@ const server = http.createServer((req, res) => {
       { title: 'FPT Smart Home', url: '#', category: 'Sản phẩm dịch vụ', order: 4, status: true },
       { title: 'Khuyến mãi', url: '#', category: 'Sản phẩm dịch vụ', order: 5, status: true },
       { title: 'Tìm điểm giao dịch', url: '#', category: 'Sản phẩm dịch vụ', order: 6, status: true },
-    ]));
+    ];
+    proxyToCMS('/api/footer/links', fallback, res);
     return;
   }
 
   if (url === '/api/fpt/faqs' && req.method === 'GET') {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify([
+    const fallback = [
       {
         question: 'Chi phí lắp mạng Internet wifi FPT ban đầu là bao nhiêu?',
         answer: 'Chi phí lắp mạng wifi FPT ban đầu thường là 299.000 VNĐ cho phí hòa mạng và lắp đặt. Phí này đã bao gồm việc lắp đặt modem wifi và kích hoạt dịch vụ, một số gói còn được trang bị thêm Access Point Wifi 6 giúp mở rộng sóng wifi hiệu quả.<br>Chi tiết<br><br>Lưu ý:<br><ul><li>Mức phí hòa mạng và lắp đặt có thể thay đổi tùy theo các chương trình khuyến mãi, khoảng thời gian hiện hành và khu vực (thay đổi không đáng kể).</li><li>Chi phí lắp đặt mạng internet wifi FPT ở TP.HCM là 300.000đ và 299.000 cho Hà Nội, Đà Nẵng. Các quận, huyện ngoại thành và các tỉnh cũng có mức phí tương tự (không thay đổi nhiều).</li><li>Để có thông tin chính xác nhất về chi phí lắp đặt mạng wifi FPT tại khu vực của bạn, nhấn vào nút TƯ VẤN NGAY bên cạnh, hoặc nhấp vào nút đăng ký gói cước phù hợp, điền thông tin để đội ngũ tư vấn thông tin chính xác nhất giá hiện hành và khuyến mãi đi kèm nhé.</li></ul>',
@@ -186,7 +230,8 @@ const server = http.createServer((req, res) => {
         order: 8,
         status: true,
       },
-    ]));
+    ];
+    proxyToCMS('/api/faqs', fallback, res);
     return;
   }
 
@@ -197,11 +242,20 @@ const server = http.createServer((req, res) => {
     });
     req.on('end', () => {
       console.log('Registration received:', body);
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      res.end(JSON.stringify({ success: true, message: 'Registration saved successfully' }));
+      try {
+        const parsedBody = JSON.parse(body);
+        proxyToCMS('/api/registrations', { success: true, message: 'Registration saved successfully' }, res, {
+          method: 'POST',
+          body: parsedBody
+        });
+      } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: false, message: 'Invalid JSON request body' }));
+      }
     });
     return;
   }
+
 
   // Serve static files
   let filePath = path.join(__dirname, url === '/' ? 'index.html' : decodeURIComponent(url));
