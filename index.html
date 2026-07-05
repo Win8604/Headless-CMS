@@ -3,7 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FPT Telecom - Internet Cáp Quang</title>
+  <title>FPT Telecom - Đăng Ký Lắp Mạng Internet Cáp Quang FPT</title>
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="FPT Telecom - Đăng Ký Lắp Mạng Internet Cáp Quang FPT">
+  <meta name="description" content="Đăng ký lắp mạng Internet cáp quang FPT tốc độ cao từ 200Mbps đến không giới hạn. Gói Giga, Sky, Meta giá ưu đãi cho cá nhân & gia đình. Hotline 19006600.">
+  <meta name="keywords" content="internet fpt, cap quang fpt, lap mang fpt, dang ky internet fpt, fpt telecom, wifi fpt">
+  <meta name="author" content="FPT Telecom">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook / Zalo -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://fpt.vn/">
+  <meta property="og:title" content="FPT Telecom - Đăng Ký Lắp Mạng Internet Cáp Quang FPT">
+  <meta property="og:description" content="Đăng ký lắp mạng Internet cáp quang FPT tốc độ cao từ 200Mbps đến không giới hạn. Gói Giga, Sky, Meta giá cực ưu đãi. Hotline 19006600.">
+  <meta property="og:image" content="assets/images/Logo-FPT-Telecom.png">
+  <meta property="og:locale" content="vi_VN">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://fpt.vn/">
+  <meta property="twitter:title" content="FPT Telecom - Đăng Ký Lắp Mạng Internet Cáp Quang FPT">
+  <meta property="twitter:description" content="Đăng ký lắp mạng Internet cáp quang FPT tốc độ cao từ 200Mbps đến không giới hạn. Gói Giga, Sky, Meta giá cực ưu đãi. Hotline 19006600.">
+  <meta property="twitter:image" content="assets/images/Logo-FPT-Telecom.png">
+  
+  <link rel="canonical" href="https://fpt.vn/">
+
   <!-- Bootstrap CSS (Local) -->
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
   <!-- Bootstrap Icons (Local) -->
@@ -11,6 +35,51 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/api-service.js"></script>
+
+  <!-- LocalBusiness & InternetServiceProvider Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "InternetServiceProvider"],
+    "name": "FPT Telecom",
+    "description": "Dịch vụ Internet cáp quang tốc độ cao FPT Telecom cho gia đình và doanh nghiệp",
+    "url": "https://fpt.vn",
+    "telephone": "19006600",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "VN",
+      "addressLocality": "Hà Nội",
+      "streetAddress": "Tầng 9, Block A, tòa nhà FPT Cầu Giấy, số 10 Phạm Văn Bạch, quận Cầu Giấy"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "07:30",
+      "closes": "22:00"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Gói Cước Internet Cáp Quang FPT",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Gói Giga",
+          "description": "Tốc độ tải xuống 150Mbps, upload 150Mbps kèm modem Wi-Fi 6"
+        },
+        {
+          "@type": "Offer",
+          "name": "Gói Sky",
+          "description": "Tốc độ tải xuống lên tới 1Gbps, upload 150Mbps kèm modem Wi-Fi 6"
+        },
+        {
+          "@type": "Offer",
+          "name": "Gói Meta",
+          "description": "Tốc độ tải xuống lên tới 1Gbps, upload 1Gbps kèm modem Wi-Fi 6"
+        }
+      ]
+    }
+  }
+  </script>
   
   
 </head>
@@ -267,7 +336,7 @@
           <div class="row align-items-end g-4">
               <!-- Left Section: Title and Subtitle -->
               <div class="col-12 col-lg-8 text-center text-lg-start">
-                  <h1 class="pricing-title">Bảng giá dịch vụ</h1>
+                  <h2 class="pricing-title">Bảng giá dịch vụ</h2>
                   <p class="pricing-subtitle">(Giá cước thay đổi theo từng KV)</p>
               </div>
 
@@ -1057,7 +1126,7 @@
         <div class="container-fluid px-4 px-md-5 py-5">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
-                    <h1 class="wifi-title">${formattedTitle}</h1>
+                    <h2 class="wifi-title">${formattedTitle}</h2>
                     <h2 class="wifi-subtitle">${formattedSubtitle}</h2>
                     <p class="wifi-description">
                         ${sec.description1.replace(/\n/g, '<br>')}
@@ -1174,7 +1243,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="hero-content">
-                        <h1 class="hero-subtitle">${formattedSubtitle}</h1>
+                        <h2 class="hero-subtitle">${formattedSubtitle}</h2>
                         <h2 class="hero-title">${formattedTitle}</h2>
                         <p class="hero-description">${sec.description.replace(/\n/g, '<br>')}</p>
                         <div class="mt-4 d-flex flex-column gap-2 gap-md-3">
@@ -1600,7 +1669,7 @@
         <div class="container-fluid px-4 px-md-5 py-5">
             <div class="row align-items-center">
                 <div class="col-12 col-lg-6">
-                    <h1 class="wifi-title">Wi-Fi 7 Dẫn đầu tốc độ</h1>
+                    <h2 class="wifi-title">Wi-Fi 7 Dẫn đầu tốc độ</h2>
                     <h2 class="wifi-subtitle">Speed X</h2>
                     <p class="wifi-description">
                         Wi-Fi 7 ba băng tần, 4x4 ăng-ten và 4 luồng truyền<br class="d-inline d-lg-none"> song song, cho khả năng xuyên <br class="d-none d-lg-inline">tường mạnh mẽ và<br class="d-inline d-lg-none"> phủ sóng toàn bộ ngôi nhà – loại bỏ hoàn toàn điểm<br class="d-inline d-lg-none"> chết Wi-Fi.
@@ -1644,7 +1713,7 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <div class="hero-content">
-                        <h1 class="hero-subtitle">Giải trí không giới hạn</h1>
+                        <h2 class="hero-subtitle">Giải trí không giới hạn</h2>
                         <h2 class="hero-title">FPT Play Box</h2>
                         <p class="hero-description">Xem trọn 360 trận đấu mỗi mùa giải, chất lượng 4K<br class="d-block d-lg-none">siêu mượt. Đón xem những siêu phẩm đến từ Erling<br class="d-block d-lg-none">Haaland và Mohamed Salah.</p>
                         <div class="mt-4 d-flex flex-column gap-2 gap-md-3">
@@ -1676,7 +1745,7 @@
   <!-- Trust Section -->
   <div class="container-fluid py-5 px-md-5 px-3" id="trust-section">
       <div class="container-fluid px-0">
-    <h1 class="fw-bold mb-5" style="font-size: 2.8rem; letter-spacing: -0.5px;">Niềm tin với khách hàng</h1>
+    <h2 class="fw-bold mb-5" style="font-size: 2.8rem; letter-spacing: -0.5px;">Niềm tin với khách hàng</h2>
           
           <!-- Stats Row -->
           <div class="row mb-5 g-4 align-items-center" id="trust-stats-container">
@@ -1736,7 +1805,7 @@
   <!-- FAQ Section -->
   <div class="container-fluid faq-section px-md-5 px-3" id="faq-section">
       <div class="container-fluid px-0">
-  <h1 class="faq-title">Câu hỏi thường gặp</h1>
+  <h2 class="faq-title">Câu hỏi thường gặp</h2>
           
           <div class="accordion faq-accordion" id="faqAccordion">
               <!-- Item 1 (Expanded) -->
@@ -1898,7 +1967,7 @@
           </div>
           <span class="digit">4</span>
         </div>
-        <h1 class="error-title">Không tìm thấy trang</h1>
+        <h2 class="error-title">Không tìm thấy trang</h2>
         <p class="error-message">Rất tiếc, chúng tôi không tìm thấy trang này. Vui lòng thử lại!</p>
         <button class="error-btn" onclick="window.location.reload()">Trang chủ</button>
       </div>
@@ -1910,7 +1979,7 @@
     <div class="server-error-wrapper-fpt">
       <div class="server-error-container-fpt">
         <div class="server-error-code-fpt">500</div>
-        <h1 class="server-error-title-fpt">Có lỗi trong quá trình xử lý</h1>
+        <h2 class="server-error-title-fpt">Có lỗi trong quá trình xử lý</h2>
         <p class="server-error-message-fpt">
           Oops! Một lỗi bất ngờ đã xảy ra. Hãy thử tải lại trang hoặc quay về trang chủ.
         </p>
