@@ -19,6 +19,7 @@
 
 # production
 /build
+dist/
 
 # misc
 .DS_Store
@@ -43,4 +44,4 @@ next-env.d.ts
 # agent configurations & plans
 .agent/
 plans/
-
+.shared/
